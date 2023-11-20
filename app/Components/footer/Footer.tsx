@@ -5,7 +5,6 @@ import { FOOTER_LINKS } from '@/libs/constants';
 import { BsTwitterX } from 'react-icons/bs';
 import { Instagram, Facebook } from 'iconsax-react';
 
-
 const Footer = () => {
   return (
     <footer className="w-full h-full bg-[#0E0E2C] text-white  pt-5 border-t border-gray-300">
@@ -32,7 +31,6 @@ const Footer = () => {
               ))}
             </ul>
 
-            
             <ul className="flex flex-col gap-y-5 max-[550px]:gap-y-3">
               <span>Contact Us</span>
               {FOOTER_LINKS.emails.map((email) => (
@@ -40,10 +38,10 @@ const Footer = () => {
               ))}
               <div className="flex items-center gap-x-4">
                 <span className="text-white h-[24px] w-[24px] font-medium rounded-full flex justify-center items-center">
-                <Instagram size="32" color="#ffffff" variant="Broken"/>
+                  <Instagram size="32" color="#ffffff" variant="Broken" />
                 </span>
                 <span className="text-white h-[24px] w-[24px]  font-medium rounded-full flex justify-center items-center">
-                <Facebook size="32" color="#ffffff" variant="Broken"/>
+                  <Facebook size="32" color="#ffffff" variant="Broken" />
                 </span>
                 <span className="text-white h-[24px] w-[24px] font-bold p-[1px] rounded-full flex justify-center items-center">
                   in

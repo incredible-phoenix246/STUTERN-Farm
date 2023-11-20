@@ -10,7 +10,6 @@ import cal from '../public/cal.svg';
 import clck from '../public/clock.svg';
 import weather from '../public/weather.svg';
 
-
 export type NavbarLinkProps = {
   id?: number;
   link: string;
@@ -54,7 +53,6 @@ export const FOOTER_LINKS: FooterLinkProps = {
     { id: 1, link: 'services', label: 'Support Center' },
     { id: 2, link: 'about', label: 'Our Mission' },
     { id: 3, link: 'contacts', label: 'Meet the Team' },
-
   ],
   help: [
     { id: 1, link: 'faq', label: 'faq' },

@@ -31,7 +31,6 @@ const Butt = () => {
             to help you track improvements in nutrient efficiency, soil health and environmental impact. By doing this,
             you are setting the next generation up for success — agronomically, economically and ecologically.
           </p>
-          
         </div>
       </div>
     </section>

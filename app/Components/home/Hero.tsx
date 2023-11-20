@@ -17,14 +17,7 @@ const Hero = () => {
         <Image src={home} alt="hero image" width={1440} height={720} priority className="w-full h-full object-cover" />
       </div>
       <div className="w-full h-full max-h-[650px] sm:hidden absolute top-0 left-0">
-        <Image
-          src={home}
-          alt="hero image"
-          width={380}
-          height={500}
-          priority
-          className="w-full h-full object-cover"
-        />
+        <Image src={home} alt="hero image" width={380} height={500} priority className="w-full h-full object-cover" />
       </div>
       <div className="flex top-0 relative z-10 text-white h-full items-center w-full bg-black/40 justify-center px-2 sm:px-4 lg:px-8">
         <div className="flex flex-col gap-y-5 w-full sm:max-w-[90%]   xl:max-w-[80%]  items-center">
