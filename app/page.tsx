@@ -5,6 +5,7 @@ import HowItWorks from './Components/home/HowItWorks';
 import Clients from './Components/home/Clients';
 import Butt from './Components/home/Butt';
 import FAQ from './Components/home/accordin';
+import NormSlider from './Components/home/norslider';
 
 export default function Home() {
   return (
@@ -13,7 +14,8 @@ export default function Home() {
       <main className="max-container w-full flex flex-col">
         <Clients />
         <WhyUs />
-        <FAQ/>
+        F<NormSlider />
+        <FAQ />
         <HowItWorks />
         <Butt />
       </main>
