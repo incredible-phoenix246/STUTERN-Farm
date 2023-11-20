@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.max-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4AED9E;
+  border-radius: 8px;
+}
+
+::selection {
+  color: white;
+  background: #4AED9E;
+}
