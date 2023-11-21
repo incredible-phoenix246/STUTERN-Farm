@@ -8,7 +8,6 @@ import Autoplay from 'embla-carousel-autoplay';
 import './sliders/slider.scss';
 import { Star1 } from 'iconsax-react';
 
-
 const NormSlider = () => {
   const options: EmblaOptionsType = { loop: true, duration: 10 };
 
@@ -28,11 +27,11 @@ const NormSlider = () => {
   return (
     <div className="w-full max-w-[1000px] xl:max-w-[1200px] flex flex-col justify-center items-center h-[350px] relative p-8 embla md:ml-10 overflow-hidden ">
       <p className="text-[#000]  mb-6 rounded-full border w-[484px] gap-3 h-40 flex items-center justify-center bg-green1 border-green1">
-      <Star1 size="32" color="#219653" variant="Bold"/>
-       Farmers Who Have Benefitted Have This To Say
+        <Star1 size="32" color="#219653" variant="Bold" />
+        Farmers Who Have Benefitted Have This To Say
       </p>
       <p className="text-3xl tet-center font-montserrat font-bold mb-16">
-       Farmers Who Have Benefitted Have This To Say
+        Farmers Who Have Benefitted Have This To Say
       </p>
       <div className="overflow-hidden w-full" ref={emblaRef}>
         <div className="embla__container flex touch-pan-y w-full ">
