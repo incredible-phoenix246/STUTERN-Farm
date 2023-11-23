@@ -22,7 +22,7 @@ const SubscribeFooter = () => {
             pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
             value={email}
             onChange={(e) => setEmail(e.target.value.toLowerCase().trim())}
-            className="border-none outline-none rounded-lg w-full pr-2"
+            className="border-none outline-none rounded-lg w-full pl-2"
           />
           <button
             type="submit"
