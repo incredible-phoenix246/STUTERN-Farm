@@ -1,12 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
-import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Eye, EyeSlash } from 'iconsax-react';
-import { useNavigate } from 'react-router-dom';
 import $http from '@/https/index';
+import { useRouter } from 'next/navigation';
 
 const PasswordInput: React.FC<{ value: string; onChange: (value: string) => void }> = ({ value, onChange }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -22,7 +21,7 @@ const PasswordInput: React.FC<{ value: string; onChange: (value: string) => void
         type={showPassword ? 'text' : 'password'}
         id="password"
         name="password"
-        className="w-full p-2 border pr-10" // Add padding for the eye ic
+        className="w-full p-2 border pr-10"
         value={value}
         onChange={(e) => onChange(e.target.value)}
         required
@@ -35,6 +34,7 @@ const PasswordInput: React.FC<{ value: string; onChange: (value: string) => void
 };
 
 const SignIn: React.FC = () => {
+  const router = useRouter();
   //const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
@@ -51,8 +51,9 @@ const SignIn: React.FC = () => {
     try {
       const response = await $http.post('/signin', formData);
 
-      if (response.data.success) {
+      if (response.data.status === 'success') {
         toast.success('✅ Sign in successful!');
+        router.push('/dashboard');
       } else {
         toast.error('❌ Sign in failed. Please check your email and password.');
       }

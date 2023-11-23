@@ -4,8 +4,10 @@ import React, { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import $http from '@/https/index';
+import { useRouter } from 'next/navigation';
 
 const SignUp: React.FC = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -21,7 +23,7 @@ const SignUp: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const { password, confirmPassword } = formData; // Destructure correctly here
+    const { password, confirmPassword } = formData;
 
     if (password !== confirmPassword) {
       toast.error('❌ Password does not match');
@@ -31,8 +33,9 @@ const SignUp: React.FC = () => {
     try {
       const response = await $http.post('/signup', formData);
 
-      if (response.data.success) {
+      if (response.data.status === 'Success') {
         toast.success('✅ Sign up successful!');
+        router.push('/signin');
       } else {
         toast.error('❌ Sign up failed. Please try again.');
       }
