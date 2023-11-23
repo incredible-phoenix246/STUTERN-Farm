@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import $http from '@/https/index';
 
 const SignUp: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -21,16 +22,23 @@ const SignUp: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    const { password, confirmPassword } = formData; // Destructure correctly here
+
+    if (password !== confirmPassword) {
+      toast.error('❌ Password does not match');
+      return;
+    }
+
     try {
-      const response = await axios.post('https://stutern-klusterthon.onrender.com/farmers/signup', formData);
-      // Assuming your API returns a success message
+      const response = await $http.post('/signup', formData);
+
       if (response.data.success) {
-        toast.success('Sign up successful!');
+        toast.success('✅ Sign up successful!');
       } else {
-        toast.error('Sign up failed. Please try again.');
+        toast.error('❌ Sign up failed. Please try again.');
       }
     } catch (error) {
-      toast.error('An error occurred. Please try again later.');
+      toast.error('❌ An error occurred. Please try again later.');
       console.error('API Error:', error);
     }
   };

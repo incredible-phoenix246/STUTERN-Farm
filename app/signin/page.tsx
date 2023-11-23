@@ -1,11 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
-import { IoEye, IoEyeOff } from 'react-icons/io5';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Eye, EyeSlash } from 'iconsax-react';
+import { useNavigate } from 'react-router-dom';
 
 const PasswordInput: React.FC<{ value: string; onChange: (value: string) => void }> = ({ value, onChange }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -34,6 +34,7 @@ const PasswordInput: React.FC<{ value: string; onChange: (value: string) => void
 };
 
 const SignIn: React.FC = () => {
+  //const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -48,15 +49,14 @@ const SignIn: React.FC = () => {
 
     try {
       const response = await axios.post('https://stutern-klusterthon.onrender.com/farmers/signin', formData);
-      // Assuming your API returns a success message
+
       if (response.data.success) {
-        toast.success('Sign in successful!');
-        // You can redirect the user or perform other actions here
+        toast.success('✅ Sign in successful!');
       } else {
-        toast.error('Sign in failed. Please check your email and password.');
+        toast.error('❌ Sign in failed. Please check your email and password.');
       }
     } catch (error) {
-      toast.error('An error occurred. Please try again later.');
+      toast.error('❌ An error occurred. Please try again later.');
       console.error('API Error:', error);
     }
   };
