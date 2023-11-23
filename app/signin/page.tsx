@@ -52,6 +52,10 @@ const SignIn: React.FC = () => {
       const response = await $http.post('/signin', formData);
 
       if (response.data.status === 'success') {
+        const { login_token } = response.data;
+
+
+        localStorage.setItem('Auth_token', login_token);
         toast.success('✅ Sign in successful!');
         router.push('/dashboard');
       } else {
