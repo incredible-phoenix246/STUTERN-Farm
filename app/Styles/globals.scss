@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.cdnfonts.com/css/made-tommy-outline');
 
 .max-container {
   max-width: 1440px;
@@ -24,4 +25,15 @@
 ::selection {
   color: white;
   background: #4aed9e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+.perspective {
+  perspective: 1000px;
 }

@@ -2,14 +2,21 @@
 
 import { NAV_LINKS } from '@/libs/constants';
 import cn from '@/utils/tailwind';
-
+import { useStateCtx } from '@/context/StateContext';
+import MobileNav from './MobileNav';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { FaBars } from 'react-icons/fa';
+import { HambergerMenu } from 'iconsax-react';
 
 const Navbar = () => {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [isActive, setIsActive] = useState('');
+
+  const toggleMobileMenu = () => {
+    setShowMobileMenu(!showMobileMenu);
+  };
   const searchParams = useSearchParams().get('path');
 
   useEffect(() => {
@@ -45,12 +52,25 @@ const Navbar = () => {
         ))}
       </div>
       <div className="hidden lg:flex gap-x-3 xl:gap-x-5 [&>button]:border-green2 [&>button]:border [&>button]:px-4 [&>button]:py-2 [&>button]:rounded-md [&>button:last-child]:bg-green1  [&>button:last-child]:text-white [&>button]:font-medium [&>button]:text-primary-light">
-        <button type="button">Login</button>
-        <button type="button">SIGN UP</button>
+        <button type="button">
+          {' '}
+          <Link href={'/signin'}>Login</Link>
+        </button>
+
+        <button type="button">
+          {' '}
+          <Link href={'/signup'}>SIGN UP</Link>
+        </button>
       </div>
-      <div className="lg:hidden text-2xl">
-        <FaBars />
+      <div
+        tabIndex={0}
+        className="lg:hidden text-2xl cursor-pointer focus:border border-primary focus:p-1 focus:rounded-md"
+        onClick={toggleMobileMenu}
+      >
+        <HambergerMenu size="32" color="#27AE60" />
       </div>
+
+      <MobileNav showMobileMenu={showMobileMenu} onClose={toggleMobileMenu} />
     </nav>
   );
 };
