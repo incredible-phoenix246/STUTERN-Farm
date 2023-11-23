@@ -7,6 +7,7 @@ const $http = axios.create({
   timeout: 30000,
   headers: {
     'Content-Type': 'application/json; charset=UTF-8',
+    credentials: 'true',
   },
 });
 

@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import $http from '@/https/index';

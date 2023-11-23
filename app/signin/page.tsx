@@ -6,6 +6,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Eye, EyeSlash } from 'iconsax-react';
 import { useNavigate } from 'react-router-dom';
+import $http from '@/https/index';
 
 const PasswordInput: React.FC<{ value: string; onChange: (value: string) => void }> = ({ value, onChange }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -48,7 +49,7 @@ const SignIn: React.FC = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('https://stutern-klusterthon.onrender.com/farmers/signin', formData);
+      const response = await $http.post('/signin', formData);
 
       if (response.data.success) {
         toast.success('✅ Sign in successful!');
