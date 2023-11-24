@@ -124,10 +124,12 @@ function Sidebar() {
         </div>
       </div>
 
-      <div className={`${getNavItemClasses({} as MenuItem)} px-3 py-4`} >
-        <div style={{ width: '2.5rem' }}>
-          <LogoutIcon />
-        </div>
+      <div className={`${getNavItemClasses({} as MenuItem)} px-3 py-4`}>
+        <Link href="/">
+          <div style={{ width: '2.5rem' }}>
+            <LogoutIcon />
+          </div>
+        </Link>
         {!toggleCollapse && <span className={classNames('text-md font-medium text-text-light')}>Logout</span>}
       </div>
     </div>
