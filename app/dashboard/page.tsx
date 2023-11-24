@@ -1,6 +1,8 @@
 // pages/dashboard.tsx
+"use client"
 import React from 'react';
 import Loggedin from '../Layouts/Loggedin';
+import withauth from '@/helpers/withAuth'
 
 const Dashboard: React.FC = () => {
   // Dummy data for demonstration
@@ -8,7 +10,6 @@ const Dashboard: React.FC = () => {
     firstName: 'John',
     lastName: 'Doe',
     email: 'john.doe@example.com',
-    // Add more properties as needed
   };
 
   return (
@@ -27,4 +28,4 @@ const Dashboard: React.FC = () => {
   );
 };
 
-export default Dashboard;
+export default withauth(Dashboard);

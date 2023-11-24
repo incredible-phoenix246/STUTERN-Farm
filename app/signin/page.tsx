@@ -56,7 +56,10 @@ const SignIn: React.FC = () => {
 
         localStorage.setItem('Auth_token', login_token);
         toast.success('✅ Sign in successful!');
-        router.push('/dashboard');
+
+        setTimeout(() => {
+          router.push('/dashboard');
+        }, 5000);
       } else {
         toast.error('❌ Sign in failed. Please check your email and password.');
       }

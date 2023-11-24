@@ -1,5 +1,6 @@
 'use client';
 
+import logout from '@/helpers/logout';
 import classNames from 'classnames';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
@@ -38,7 +39,10 @@ const menuItems = [
   { id: 4, label: 'Price Prediton Tool', icon: TagIcon, link: '/tutorials' },
 ];
 
-const Sidebar = () => {
+function Sidebar() {
+  const handleLogout = () => {
+    logout();
+  };
   const [toggleCollapse, setToggleCollapse] = useState(false);
   const [isCollapsible, setIsCollapsible] = useState(false);
 
@@ -120,7 +124,7 @@ const Sidebar = () => {
         </div>
       </div>
 
-      <div className={`${getNavItemClasses({} as MenuItem)} px-3 py-4`}>
+      <div className={`${getNavItemClasses({} as MenuItem)} px-3 py-4`} >
         <div style={{ width: '2.5rem' }}>
           <LogoutIcon />
         </div>
@@ -128,6 +132,6 @@ const Sidebar = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Sidebar;

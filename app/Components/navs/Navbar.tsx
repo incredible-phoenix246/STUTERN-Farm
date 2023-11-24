@@ -54,7 +54,7 @@ const Navbar = () => {
       <div className="hidden lg:flex gap-x-3 xl:gap-x-5 [&>button]:border-green2 [&>button]:border [&>button]:px-4 [&>button]:py-2 [&>button]:rounded-md [&>button:last-child]:bg-green1  [&>button:last-child]:text-white [&>button]:font-medium [&>button]:text-primary-light">
         <button type="button">
           {' '}
-          <Link href={'/signin'}>Login</Link>
+          <Link href={'/signin'}>SIGN IN</Link>
         </button>
 
         <button type="button">
