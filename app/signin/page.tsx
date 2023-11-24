@@ -1,5 +1,5 @@
 'use client';
-
+import MainLayout from '../Layouts/Main';
 import React, { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -54,7 +54,6 @@ const SignIn: React.FC = () => {
       if (response.data.status === 'success') {
         const { login_token } = response.data;
 
-
         localStorage.setItem('Auth_token', login_token);
         toast.success('✅ Sign in successful!');
         router.push('/dashboard');
@@ -68,46 +67,48 @@ const SignIn: React.FC = () => {
   };
 
   return (
-    <div className="bg-green-600 h-screen flex flex-col items-center justify-center">
-      <div className="text-center text-white mb-4 md:mb-8">
-        <h1 className="text-4xl font-bold mb-2">Sign In to Your StuternFarm Account</h1>
+    <MainLayout>
+      <div className="bg-green-600 h-screen flex flex-col items-center justify-center">
+        <div className="text-center text-white mb-4 md:mb-8">
+          <h1 className="text-4xl font-bold mb-2">Sign In to Your StuternFarm Account</h1>
+        </div>
+        <div className="bg-white p-8 rounded shadow-md mt-4 md:mt-8 w-full max-w-md">
+          <form onSubmit={handleSubmit}>
+            <div className="mb-4">
+              <label htmlFor="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                className="w-full p-2 border"
+                onChange={(e) => handleInputChange('email', e.target.value)}
+                value={formData.email}
+                required
+              />
+            </div>
+            <PasswordInput value={formData.password} onChange={(value) => handleInputChange('password', value)} />
+            <button type="submit" className="bg-green-500 text-white p-2 rounded w-full mt-4">
+              Sign In
+            </button>
+          </form>
+          <p className="text-xs text-[#2F80ED] mt-4">
+            <a href="">Forgot your password?</a>
+          </p>
+          <p className="mt-4 text-center">
+            If you need support, please visit our{' '}
+            <a href="" className="text-[#2F80ED]">
+              support site,
+            </a>{' '}
+            or contact us at{' '}
+            <a href="mailto:support@stuternfarm.com" className="text-[#2F80ED]">
+              support@stuternfarm.com
+            </a>
+            .
+          </p>
+        </div>
+        <ToastContainer theme="dark" />
       </div>
-      <div className="bg-white p-8 rounded shadow-md mt-4 md:mt-8 w-full max-w-md">
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label htmlFor="email">Email Address</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              className="w-full p-2 border"
-              onChange={(e) => handleInputChange('email', e.target.value)}
-              value={formData.email}
-              required
-            />
-          </div>
-          <PasswordInput value={formData.password} onChange={(value) => handleInputChange('password', value)} />
-          <button type="submit" className="bg-green-500 text-white p-2 rounded w-full mt-4">
-            Sign In
-          </button>
-        </form>
-        <p className="text-xs text-[#2F80ED] mt-4">
-          <a href="">Forgot your password?</a>
-        </p>
-        <p className="mt-4 text-center">
-          If you need support, please visit our{' '}
-          <a href="" className="text-[#2F80ED]">
-            support site,
-          </a>{' '}
-          or contact us at{' '}
-          <a href="mailto:support@stuternfarm.com" className="text-[#2F80ED]">
-            support@stuternfarm.com
-          </a>
-          .
-        </p>
-      </div>
-      <ToastContainer theme="dark" />
-    </div>
+    </MainLayout>
   );
 };
 

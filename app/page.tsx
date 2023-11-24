@@ -8,22 +8,24 @@ import Butt from './Components/home/Butt';
 import FAQ from './Components/home/accordin';
 import NormSlider from './Components/home/norslider';
 import StateContextProvider from '@/context/StateContext';
+import MainLayout from './Layouts/Main';
 
 export default function Home() {
   return (
     <>
       <StateContextProvider>
-        <Hero />
-        <main className="max-container w-full flex flex-col">
-          <Clients />
-
-          <WhyUs />
-          <Bodyup />
-          <NormSlider />
-          <FAQ />
-          <HowItWorks />
-          <Butt />
-        </main>
+        <MainLayout>
+          <Hero />
+          <main className="max-container w-full flex flex-col">
+            <Clients />
+            <WhyUs />
+            <Bodyup />
+            <NormSlider />
+            <FAQ />
+            <HowItWorks />
+            <Butt />
+          </main>
+        </MainLayout>
       </StateContextProvider>
     </>
   );

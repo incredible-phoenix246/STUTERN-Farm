@@ -1,5 +1,6 @@
 // pages/dashboard.tsx
 import React from 'react';
+import Loggedin from '../Layouts/Loggedin';
 
 const Dashboard: React.FC = () => {
   // Dummy data for demonstration
@@ -11,16 +12,18 @@ const Dashboard: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>Welcome to Your Dashboard, {user.firstName}!</h1>
+    <Loggedin>
       <div>
-        <p>
-          Name: {user.firstName} {user.lastName}
-        </p>
-        <p>Email: {user.email}</p>
-        {/* Add more information or components as needed */}
+        <h1>Welcome to Your Dashboard, {user.firstName}!</h1>
+        <div>
+          <p>
+            Name: {user.firstName} {user.lastName}
+          </p>
+          <p>Email: {user.email}</p>
+          {/* Add more information or components as needed */}
+        </div>
       </div>
-    </div>
+    </Loggedin>
   );
 };
 
