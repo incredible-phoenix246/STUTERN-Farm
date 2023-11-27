@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Work_Sans } from 'next/font/google';
 import './Styles/globals.scss';
 import Footer from '@/app/Components/footer/Footer';
+import { ToastContainer } from 'react-toastify';
 
 const workSans = Work_Sans({
   subsets: ['latin'],
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <Footer />
       </body>
+      <ToastContainer theme="dark" />
     </html>
   );
 }

@@ -14,9 +14,11 @@
     "postinstall": "husky install"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
     "@types/express": "^4.17.21",
     "@types/react-router-dom": "^5.3.3",
     "axios": "^1.6.2",
+    "class-variance-authority": "^0.7.0",
     "classnames": "^2.3.2",
     "clsx": "^2.0.0",
     "embla-carousel-autoplay": "^8.0.0-rc14",
