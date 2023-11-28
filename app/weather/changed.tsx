@@ -31,7 +31,7 @@ const ChangeLocationScreen: React.FC = () => {
   const handleGetWeather = async () => {
     try {
       const response = await fetch(
-        `http://api.weatherapi.com/v1/forecast.json?key=65c3ea8123ca484d889235042232711&q=${locationQuery}`
+        `https://api.weatherapi.com/v1/forecast.json?key=65c3ea8123ca484d889235042232711&q=${locationQuery}`
       );
       const data: WeatherResponse = await response.json();
       setWeatherData(data);
