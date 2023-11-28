@@ -29,11 +29,11 @@ interface MenuItem {
 
 const menuItems = [
   { id: 1, label: 'Dashboard', icon: DashboardIcon, link: '/dashboard' },
-  { id: 2, label: 'Crop Management', icon: CropIcon, link: '/posts' },
+  { id: 2, label: 'Crop Management', icon: CropIcon, link: '/cropman' },
   { id: 3, label: 'Pest Control', icon: PestIcon, link: '/users' },
   { id: 4, label: 'Chat History', icon: ChatIcon, link: '/chat' },
-  { id: 5, label: 'Weather', icon: WeatherIcon, link: '/tutorials' },
-  { id: 6, label: 'Farm Logs', icon: FarmLogIcon, link: '/tutorials' },
+  { id: 5, label: 'Weather', icon: WeatherIcon, link: '/weather' },
+  { id: 6, label: 'Farm Logs', icon: FarmLogIcon, link: '/farmlog' },
   { id: 7, label: 'Market Insight', icon: InsightIcon, link: '/tutorials' },
   { id: 8, label: 'Cmmunity Forum', icon: ComfIcon, link: '/tutorials' },
   { id: 4, label: 'Price Prediton Tool', icon: TagIcon, link: '/tutorials' },
