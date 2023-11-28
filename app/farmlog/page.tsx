@@ -15,7 +15,9 @@ const CreateProduceScreen: React.FC = () => {
   const [quantity, setQuantity] = useState('');
   const [produceList, setProduceList] = useState<{ produceName: string; quantity: number }[]>([]);
   const [responseMessage, setResponseMessage] = useState('');
-  const authToken = localStorage.getItem('Auth_token') || '';
+  
+
+  const authToken = typeof window !== 'undefined' ? localStorage.getItem('Auth_token') || '' : '';
 
   const handleCreateProduce = async () => {
     try {
